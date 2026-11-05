@@ -1,0 +1,97 @@
+% Common packages and commands used across the paper.
+\usepackage{amsmath}
+\usepackage{amssymb} % \bigstar (GitHub-stars column header)
+\usepackage{balance} % balance columns on the final bibliography page
+\usepackage{booktabs}
+\usepackage{cite}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{placeins} % \FloatBarrier to keep floats within their (sub)section
+\usepackage{listings}
+\usepackage{multirow}
+\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage[bookmarks=false,colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\usepackage{cleveref}
+\usepackage{tikz}
+\usepackage{url}
+\usepackage{amsfonts}
+
+\usetikzlibrary{positioning,arrows.meta,fit,backgrounds,shapes.geometric,shapes.multipart}
+
+% IEEEtran leaves generous space around floats. Keep figures readable while
+% reducing dead vertical gaps between captions and surrounding text.
+\setlength{\textfloatsep}{6pt plus 2pt minus 2pt}
+\setlength{\floatsep}{6pt plus 2pt minus 2pt}
+\setlength{\intextsep}{6pt plus 2pt minus 2pt}
+\setlength{\dbltextfloatsep}{6pt plus 2pt minus 2pt}
+\setlength{\dblfloatsep}{6pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{2pt plus 1pt minus 1pt}
+\setlength{\belowcaptionskip}{0pt plus 1pt minus 1pt}
+
+% Listing style for JavaMOP specs.
+\lstdefinelanguage{mop}{
+  morekeywords={event,creation,before,after,returning,call,target,condition,ere,ltl},
+  morekeywords=[2]{Map,Collection,Iterator,Set,Iterable,void,boolean},
+  sensitive=true,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]",
+}
+\lstset{
+  language=mop,
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{blue!70!black}\bfseries,
+  keywordstyle=[2]\color{teal!70!black},
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{purple!70!black},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  numbersep=2pt,
+  showstringspaces=false,
+  columns=flexible,
+  keepspaces=true,
+  breaklines=false,
+  xleftmargin=0.5em,
+  aboveskip=0.4em,
+  belowskip=0.2em,
+  escapeinside={(*@}{@*)},
+}
+
+\newcommand{\papername}{MMM paper\xspace}
+\newcommand{\toolname}{\textsc{ToolName}\xspace} % TODO: pick a name
+\newcommand{\javamop}{\textsc{JavaMOP}\xspace}
+\newcommand{\tracemop}{\textsc{TraceMOP}\xspace}
+\newcommand{\valg}{\textsc{Valg}\xspace}
+\newcommand{\lazymop}{\textsc{LazyMOP}\xspace}
+\newcommand{\sota}{SoTA\xspace}
+\newcommand{\x}{x\xspace}
+% Suppress the \xspace-inserted space before a times "x" or a percent sign,
+% so number macros render as "207.3x" / "95%" not "207.3 x" / "95 %".
+\xspaceaddexceptions{\x \%}
+
+\newcommand{\eg}{e.g.,\xspace}
+\newcommand{\ie}{i.e.,\xspace}
+\newcommand{\etal}{et al.\xspace}
+\newcommand{\etc}{etc.\xspace}
+
+\newcommand{\researchquestion}[1]{\textbf{RQ#1}}
+\newcommand{\todo}[1]{\textcolor{red}{TODO: #1}}
+\newcommand{\Fix}[1]{\textcolor{red}{[#1]}}
+\newcommand{\ol}[1]{\textcolor{teal}{[OL:~#1]}}
+\newcommand{\jy}[1]{\textcolor{orange}{[JY:~#1]}}
+\newcommand{\Space}[1]{}
+\newcommand{\CodeIn}[1]{{\small \texttt{#1}}}
+\newcommand{\Code}[1]{{\small\ifmmode{\texttt{#1}}\else$\texttt{#1}$\fi}}
+\newcommand{\MyPara}[1]{\vspace{1pt}\noindent\textbf{#1}.}
+\newcommand{\MyParaOnly}[1]{\noindent\textbf{#1}}
+\newcommand{\MyItPara}[1]{\noindent\textit{#1}.}
+\newcommand{\MyItParaOnly}[1]{\noindent\textit{#1}}
+
+\newcommand{\PP}[1]{\smallskip\noindent\textbf{#1.}\hspace{0.5em}}
+
+\newcommand{\RepoURL}{\url{https://github.com/TODO/TODO}} % TODO: artifact URL
+
+\newcommand{\djnote}[1]{{\color{orange}\textbf{[DJ: #1]}}}
